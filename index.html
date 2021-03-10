@@ -20,6 +20,10 @@
 
 <body style="background-color:#191a19;">
   <center>
+    <audio id="blogoslawieni">
+      <source src="/jp.mp3" type="audio/mpeg">
+      Twoja przeglądarka nie wspiera audio :(
+    </audio>
     <h1 class="efindus" style="color: white;">
       Nafing tu si hir...
     </h1>
@@ -33,14 +37,6 @@
       </h1>
     </p>
   </center>
-  <script>
-    let score = 0
-    let baton = document.getElementById('baton')
-    baton.addEventListener('click', () => {
-      score++
-      document.getElementById('daSkor').innerHTML = score
-    }, false);
-  </script>
+  <script type="text/javascript" src="/scripts/main.js"></script>
 </body>
-
 </html>
