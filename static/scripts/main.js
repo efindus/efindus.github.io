@@ -19,7 +19,7 @@ let handleAudio = () => {
 let handleImage = () => {
   let jp2 = document.getElementById('jp2')
   let site = document.getElementById('site')
-  jp2.style.display = `inital`
+  jp2.style.display = ``
   site.style.display = `none`
 
   clearInterval(daInterval)
@@ -31,7 +31,7 @@ let handleImage = () => {
     if (document.getElementById('blogoslawieni').paused) {
       clearInterval(daInterval)
       jp2.style.display = `none`
-      site.style.display = `inital`
+      site.style.display = ``
     }
   }, 10)
 }
