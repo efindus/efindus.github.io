@@ -3,10 +3,11 @@ let score = 0
 let handleAudio = () => {
   let audio = document.getElementById('blogoslawieni')
     
-  if (!audio.paused)
-    if (audio.currentTime > 37)
+  if (!audio.paused) {
+    if (audio.currentTime > 37) {
       audio.currentTime = 0
-  else {
+    }
+  } else {
     audio.currentTime = 0
     audio.play()
   }
