@@ -19,7 +19,7 @@ let handleAudio = () => {
 let handleImage = () => {
   let jp2 = document.getElementById('jp2')
   let site = document.getElementById('site')
-  jp2.style.display = ``
+  jp2.parentElement.style.display = ``
   site.style.display = `none`
 
   clearInterval(daInterval)
@@ -30,7 +30,7 @@ let handleImage = () => {
     rotateImage(rotation)
     if (document.getElementById('blogoslawieni').paused) {
       clearInterval(daInterval)
-      jp2.style.display = `none`
+      jp2.parentElement.style.display = `none`
       site.style.display = ``
     }
   }, 10)
