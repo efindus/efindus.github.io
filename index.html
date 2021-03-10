@@ -8,12 +8,12 @@
   <meta property="og:title" content="efindus" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://efindus.xyz" />
-  <meta property="og:image" content="http://efindus.xyz/logo.png">
+  <meta property="og:image" content="https://efindus.xyz/static/logo.png">
   <meta property="og:description" content="Moja strona!" />
   <meta name="theme-color" content="#18edd8">
   <style>
     button{
-        cursor: pointer;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -21,22 +21,27 @@
 <body style="background-color:#191a19;">
   <center>
     <audio id="blogoslawieni">
-      <source src="/jp.mp3" type="audio/mpeg">
+      <source src="/static/jp.mp3" type="audio/mpeg">
       Twoja przeglądarka nie wspiera audio :(
     </audio>
-    <h1 class="efindus" style="color: white;">
-      Nafing tu si hir...
-    </h1>
-    <img src="/jp2.png" alt="jp">
-    <p>
-      <button id="baton" type="button">No klikaj no! Już!</button>
+    <div style="display: none;" width="456" height="548">
+      <img id="jp2" src="static/jp2.jpg">
+    </div>
+    <div id="site" style="display: initial;">
       <h1 class="efindus" style="color: white;">
-        Żeś kliknął guzior 
-        <span id="daSkor">0</span>
-        razy!
+        Nafing tu si hir...
       </h1>
-    </p>
+      <img src="/static/jp2.png" alt="jp">
+      <p>
+        <button id="baton" type="button">No klikaj no! Już!</button>
+        <h1 class="efindus" style="color: white;">
+          Żeś kliknął guzior 
+          <span id="daSkor">0</span>
+          razy!
+        </h1>
+      </p>
+    </div>
   </center>
-  <script type="text/javascript" src="/scripts/main.js"></script>
+  <script type="text/javascript" src="/static/scripts/main.js"></script>
 </body>
 </html>
