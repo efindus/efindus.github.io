@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="pl">
 
-<head>
-  <meta charset="UTF-8">
-  <title>efindus</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>efindus</title>
 
-  <meta property="og:title" content="efindus" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://efindus.xyz" />
-  <meta property="og:image" content="https://efindus.xyz/static/logo.png">
-  <meta property="og:description" content="Moja strona!" />
-  <meta name="theme-color" content="#18edd8">
-  <style>
-    button{
-      cursor: pointer;
-    }
-  </style>
-</head>
+    <meta property="og:title" content="efindus" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://efindus.xyz" />
+    <meta property="og:image" content="https://efindus.xyz/static/logo.png">
+    <meta property="og:description" content="Moja strona!" />
+    <meta name="theme-color" content="#18edd8">
+    <style>
+      button {
+        cursor: pointer;
+      }
+      img {
+        cursor: pointer;
+      }
+    </style>
+  </head>
 
-<body style="background-color:#191a19;">
-  <center>
-    <audio id="blogoslawieni">
-      <source src="/static/jp.mp3" type="audio/mpeg">
-      Twoja przeglądarka nie wspiera audio :(
-    </audio>
-    <div style="display: none;">
-      <br>
-      <br>
-      <br>
-      <img id="jp2" src="static/jp2.jpg" width="456" height="548">
-    </div>
-    <div id="site">
-      <h1 class="efindus" style="color: white;">
-        Nafing tu si hir...
-      </h1>
-      <img src="/static/jp2.png" alt="jp">
-      <p>
-        <button id="baton" type="button">No klikaj no! Już!</button>
+  <body style="background-color:#191a19;">
+    <center>
+      <div id="content" style="display: none;">
+      </div>
+      <div id="site">
         <h1 class="efindus" style="color: white;">
-          Żeś kliknął guzior 
-          <span id="daSkor">0</span>
-          razy!
+          Nafing tu si hir...
         </h1>
-      </p>
-    </div>
-  </center>
-  <script type="text/javascript" src="/static/scripts/main.js"></script>
-</body>
+        <img src="/static/jp2.png" alt="jp">
+        <p>
+          <button id="baton" type="button">No klikaj no! Już!</button>
+          <h1 class="efindus" style="color: white;">
+            Żeś kliknął guzior 
+            <span id="daSkor">0</span>
+            razy!
+          </h1>
+        </p>
+      </div>
+    </center>
+    <script type="text/javascript" src="/static/scripts/main.js"></script>
+  </body>
 </html>
