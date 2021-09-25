@@ -1,0 +1,15 @@
+{
+    "name": "efindus.xyz",
+    "short_name": "efindus",
+    "start_url": "../",
+    "display": "standalone",
+    "background_color": "#191a19",
+    "description": "Moja strona!",
+    "icons": [
+        {
+            "src": "static/logo.png",
+            "sizes": "4422x4434",
+            "type": "image/png"
+        }
+    ]
+}
