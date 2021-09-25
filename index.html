@@ -14,8 +14,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Description" content="Moja strona!">
     <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+      }
+      img {
+        max-width: 100%;
+        object-fit: contain;
+        height: clamp(100px, 50vw, 300px);
+      }
+      h1 {
+        font-size: clamp(1rem, -0.875rem + 8.333333vw, 3.5rem);
+      }
       button {
         cursor: pointer;
+      }
+      #container, #site {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+      }
+      #site {
+        flex-direction: column;
+        word-break: break-word;
+        text-align: center;
+        padding-bottom: 10px;
       }
     </style>
     <link rel="manifest" href="static/manifest.json">
@@ -23,12 +47,12 @@
   </head>
 
   <body style="background-color:#191a19;">
-    <center>
+    <div id="container">
       <div id="content" style="display: none;">
       </div>
       <div id="site">
       </div>
-    </center>
+    </div>
     <script type="text/javascript" src="/static/scripts/main.js"></script>
   </body>
 </html>

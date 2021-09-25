@@ -59,7 +59,7 @@ let daSiteInner = (daScore) => {
   <h1 class="efindus" style="color: white;">
     Nafing tu si hir...
   </h1>
-  <img src="/static/jp2.png" width="400" height="240" alt="jp2">
+  <img src="/static/jp2.png" width="400" height="140" alt="jp2">
   <p>
     <button id="baton" type="button">No klikaj no! Już!</button>
     <h1 class="efindus" style="color: white;">
