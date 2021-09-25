@@ -13,6 +13,8 @@ self.addEventListener('install', event => {
         '/static/jp2.png',
         '/static/jp2.mp3',
         '/static/logo.png',
+        '/static/logo144.png',
+        '/static/logo192.png',
         '/static/ra.jpg',
         '/static/rr.mp3',
         '/static/scripts/main.js',
