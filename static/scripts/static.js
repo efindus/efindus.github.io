@@ -1,1 +1,61 @@
-eval(atob('bGV0IGRhUlJJbnRlcnZhbApsZXQgZmxpcCA9IGZhbHNlCmxldCBwbGF5aW5nID0gZmFsc2UKCmxldCByciA9IGAKPGJyPgo8YnI+Cjxicj4KPGltZyBpZD0icnJqcGciIHNyYz0iL3N0YXRpYy9yYS5qcGciIHdpZHRoPSI2NjAiIGhlaWdodD0iMzcxIj4KPGF1ZGlvIGlkPSJyciI+CiAgPHNvdXJjZSBzcmM9Ii9zdGF0aWMvcnIubXAzIiB0eXBlPSJhdWRpby9tcGVnIj4KICBUd29qYSBwcnplZ2zEhWRhcmthIG5pZSB3c3BpZXJhIGF1ZGlvIDooCjwvYXVkaW8+CmAKCmxldCBoYW5kbGVSUkF1ZGlvID0gKCkgPT4gewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb250ZW50JykuaW5uZXJIVE1MID0gcnIKICBsZXQgYXVkaW8gPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncnInKQogICAgCiAgaWYgKCFhdWRpby5wYXVzZWQpIHsKICAgIGlmIChhdWRpby5jdXJyZW50VGltZSA+IDM3KSB7CiAgICAgIGF1ZGlvLmN1cnJlbnRUaW1lID0gMAogICAgfQogIH0gZWxzZSB7CiAgICBhdWRpby5jdXJyZW50VGltZSA9IDAKICAgIGF1ZGlvLnBsYXkoKQogICAgaGFuZGxlUlJJbWFnZSgpCiAgfQp9CgpsZXQgaGFuZGxlUlJJbWFnZSA9ICgpID0+IHsKICBsZXQgcnJqcGcgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncnJqcGcnKQogIGxldCBzaXRlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3NpdGUnKQogIHJyanBnLnBhcmVudEVsZW1lbnQuc3R5bGUuZGlzcGxheSA9IGBgCiAgc2l0ZS5zdHlsZS5kaXNwbGF5ID0gYG5vbmVgCgogIGNsZWFySW50ZXJ2YWwoZGFSUkludGVydmFsKQoKICBkYVJSSW50ZXJ2YWwgPSBzZXRJbnRlcnZhbCgoKSA9PiB7CiAgICBpZiAoTWF0aC5yYW5kb20oKSA8IDAuMjEzNykgewogICAgICBmbGlwID0gIWZsaXAKICAgIH0KCiAgICB0cmFuc2Zvcm1JbWFnZSgncnJqcGcnLCBgc2NhbGVYKCR7ZmxpcCA/IC0xIDogMX0pYCkKICAgIGlmIChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncnInKS5wYXVzZWQpIHsKICAgICAgY2xlYXJJbnRlcnZhbChkYVJSSW50ZXJ2YWwpCiAgICAgIHJyanBnLnBhcmVudEVsZW1lbnQuc3R5bGUuZGlzcGxheSA9IGBub25lYAogICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY29udGVudCcpLmlubmVySFRNTCA9ICcnCiAgICB9CiAgfSwgNTApCn0KCmxldCB0cmFuc2Zvcm1JbWFnZSA9IChpZCwgdHJhbnNmb3JtKSA9PiB7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoaWQpLnN0eWxlLnRyYW5zZm9ybSA9IHRyYW5zZm9ybQp9Cgpkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnYmF0b24nKS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IHsKICBpZiAoIXBsYXlpbmcpIHsKICAgIGhhbmRsZVJSQXVkaW8oKQogIH0KfSwgZmFsc2UpOw=='))
+let daRRInterval
+let flip = false
+let playing = false
+
+let rr = `
+<br>
+<br>
+<br>
+<img id="rrjpg" src="/static/ra.jpg" width="660" height="371">
+<audio id="rr">
+  <source src="/static/rr.mp3" type="audio/mpeg">
+  Twoja przeglądarka nie wspiera audio :(
+</audio>
+`
+
+let handleRRAudio = () => {
+  document.getElementById('content').innerHTML = rr
+  let audio = document.getElementById('rr')
+    
+  if (!audio.paused) {
+    if (audio.currentTime > 37) {
+      audio.currentTime = 0
+    }
+  } else {
+    audio.currentTime = 0
+    audio.play()
+    handleRRImage()
+  }
+}
+
+let handleRRImage = () => {
+  let rrjpg = document.getElementById('rrjpg')
+  let site = document.getElementById('site')
+  rrjpg.parentElement.style.display = ``
+  site.style.display = `none`
+
+  clearInterval(daRRInterval)
+
+  daRRInterval = setInterval(() => {
+    if (Math.random() < 0.2137) {
+      flip = !flip
+    }
+
+    transformImage('rrjpg', `scaleX(${flip ? -1 : 1})`)
+    if (document.getElementById('rr').paused) {
+      clearInterval(daRRInterval)
+      rrjpg.parentElement.style.display = `none`
+      document.getElementById('content').innerHTML = ''
+    }
+  }, 50)
+}
+
+let transformImage = (id, transform) => {
+  document.getElementById(id).style.transform = transform
+}
+
+document.getElementById('baton').addEventListener('click', () => {
+  if (!playing) {
+    handleRRAudio()
+  }
+}, false)
