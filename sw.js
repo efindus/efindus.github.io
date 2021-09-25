@@ -19,6 +19,7 @@ self.addEventListener('install', event => {
         '/static/rr.mp3',
         '/static/scripts/main.js',
         '/static/scripts/static.js',
+        '/static/manifest.json'
       ])
     })
   )
