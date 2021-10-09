@@ -1,6 +1,8 @@
+const versionNumber = 'v4'
+
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('v3').then(cache => {
+    caches.open(versionNumber).then(cache => {
       return cache.addAll([
         '/',
         '/index.html',
@@ -33,7 +35,7 @@ self.addEventListener('fetch', event => {
       return fetch(event.request).then(response => {
         let responseClone = response.clone()
         
-        caches.open('v3').then(cache => {
+        caches.open(versionNumber).then(cache => {
           cache.put(event.request, responseClone)
         })
         return response
@@ -45,7 +47,7 @@ self.addEventListener('fetch', event => {
 })
 
 self.addEventListener('activate', event => {
-  var cacheKeeplist = ['v3']
+  var cacheKeeplist = [ versionNumber ]
 
   event.waitUntil(
     caches.keys().then(keyList => {
