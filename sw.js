@@ -47,7 +47,7 @@ self.addEventListener('fetch', event => {
 })
 
 self.addEventListener('activate', event => {
-  var cacheKeeplist = [ versionNumber ]
+  const cacheKeeplist = [ versionNumber ]
 
   event.waitUntil(
     caches.keys().then(keyList => {
