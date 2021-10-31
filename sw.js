@@ -1,4 +1,4 @@
-const versionNumber = 'v4'
+const versionNumber = 'v5'
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -16,11 +16,13 @@ self.addEventListener('install', event => {
         '/static/jp2.mp3',
         '/static/logo.png',
         '/static/logo144.png',
+        '/static/spider.png',
         '/static/logo192.png',
         '/static/ra.jpg',
         '/static/rr.mp3',
         '/static/scripts/main.js',
         '/static/scripts/static.js',
+        '/static/scripts/bugs.js',
         '/static/manifest.json'
       ])
     })

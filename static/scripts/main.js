@@ -292,3 +292,37 @@ setInterval(() => {
     }
   }
 }, 10000)
+
+let spiderController
+
+const createDestorySpiderContainer = () => {
+	if(spiderController) return;
+
+	spiderController = new SpiderController({
+		imageSprite: "https://efindus.xyz/static/spider.png",
+		num_frames: 6,
+		bugWidth: 118,
+		bugHeight: 102,
+		canFly: false,
+		canDie: true,
+		zoom: 5,
+		minDelay: 10,
+		maxDelay: 100,
+		minBugs: Math.round((document.body.clientWidth / 400) * 1.5),
+		maxBugs: Math.round((document.body.clientWidth / 400) * 3.5),
+		mouseOver: 'die'
+	});
+}
+
+const hBegin = new Date()
+hBegin.setMonth(9)
+hBegin.setDate(20)
+hBegin.setHours(0, 0, 0, 0)
+const hEnd = new Date()
+hEnd.setMonth(10)
+hEnd.setDate(10)
+hEnd.setHours(0, 0, 0, 0)
+if (hEnd.getTime() > Date.now() && hBegin.getTime() < Date.now()) {
+  createDestorySpiderContainer()
+}
+
