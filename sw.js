@@ -1,63 +1,49 @@
-const versionNumber = 'v5'
+const versionNumber = 'v7';
 
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(versionNumber).then(cache => {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/favicon.ico',
-        '/static/',
-        '/static/index.html',
-        '/static/jp2-2.jpg',
-        '/static/jp2-2.mp3',
-        '/static/jp2.jpg',
-        '/static/jp2.png',
-        '/static/jp2.mp3',
-        '/static/logo.png',
-        '/static/logo144.png',
-        '/static/spider.png',
-        '/static/logo192.png',
-        '/static/ra.jpg',
-        '/static/rr.mp3',
-        '/static/scripts/main.js',
-        '/static/scripts/static.js',
-        '/static/scripts/bugs.js',
-        '/static/manifest.json'
-      ])
-    })
-  )
-})
+	event.waitUntil(
+		caches.open(versionNumber).then(cache => {
+			return cache.addAll([
+				'/',
+				'/index.html',
+				'/favicon.ico',
+				'/static/main.css',
+				'/static/spider.png',
+				'/static/logo.png',
+				'/static/logo144.png',
+				'/static/logo192.png',
+				'/static/main.js',
+				'/static/bugs.js',
+				'/static/manifest.json',
+				'/static/Roboto.woff2',
+			]);
+		})
+	);
+});
 
 self.addEventListener('fetch', event => {
-  event.respondWith(caches.match(event.request).then(response => {
-    if (response !== undefined) {
-      return response
-    } else {
-      return fetch(event.request).then(response => {
-        let responseClone = response.clone()
-        
-        caches.open(versionNumber).then(cache => {
-          cache.put(event.request, responseClone)
-        })
-        return response
-      }).catch(() => {
-        return caches.match('/static/ra.jpg')
-      })
-    }
-  }))
-})
+	event.respondWith(caches.match(event.request).then(response => {
+		if (response !== undefined) {
+			return response;
+		} else {
+			return fetch(event.request).then(response => {
+				const responseClone = response.clone();
+				caches.open(versionNumber).then(cache => cache.put(event.request, responseClone));
+				return response;
+			});
+		}
+	}));
+});
 
 self.addEventListener('activate', event => {
-  const cacheKeeplist = [ versionNumber ]
+	const cacheKeeplist = [ versionNumber ];
 
-  event.waitUntil(
-    caches.keys().then(keyList => {
-      return Promise.all(keyList.map(key => {
-        if (cacheKeeplist.indexOf(key) === -1) {
-          return caches.delete(key);
-        }
-      }))
-    })
-  )
-})
+	event.waitUntil(
+		caches.keys().then(keyList => {
+			return Promise.all(keyList.map(key => {
+				if (cacheKeeplist.indexOf(key) === -1)
+					return caches.delete(key);
+			}));
+		})
+	);
+});

@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url('./Roboto.woff2') format('woff2');
+}
+
+/* Styles */
+html, body {
+	margin: 0;
+	height: 100%;
+	color: white;
+	background-color: #191a19;
+	font-size: 25px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+}
+
+.text {
+	font-size: clamp(1rem, -0.875rem + 8.333333vw, 3.5rem);
+}

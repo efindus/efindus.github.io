@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#191a19",
     "theme_color": "#62ea51",
-    "description": "Moja strona!",
+    "description": "My website!",
     "icons": [
         {
             "src": "logo.png",
