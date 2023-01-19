@@ -1,4 +1,4 @@
-const versionNumber = 'v7';
+const versionNumber = 'v8';
 
 self.addEventListener('install', event => {
 	event.waitUntil(
@@ -10,8 +10,11 @@ self.addEventListener('install', event => {
 				'/static/main.css',
 				'/static/spider.png',
 				'/static/logo.png',
-				'/static/logo144.png',
-				'/static/logo192.png',
+				'/static/logo/128.png',
+				'/static/logo/144.png',
+				'/static/logo/192.png',
+				'/static/logo/192t.png',
+				'/static/logo/192t2.png',
 				'/static/main.js',
 				'/static/bugs.js',
 				'/static/manifest.json',
@@ -27,9 +30,14 @@ self.addEventListener('fetch', event => {
 			return response;
 		} else {
 			return fetch(event.request).then(response => {
-				const responseClone = response.clone();
-				caches.open(versionNumber).then(cache => cache.put(event.request, responseClone));
+				let responseClone = response.clone();
+				
+				caches.open(versionNumber).then(cache => {
+					cache.put(event.request, responseClone);
+				});
 				return response;
+			}).catch(() => {
+				return caches.match('/static/logo.png');
 			});
 		}
 	}));
